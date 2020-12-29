@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id='header'></div>
+<h2>header 2</h2>
+
+    <script>
+        window.onload = function() {
+            var data = {
+                'name' : 'naman'
+            };
+            console.log("coming");
+    //     $.post( "127.0.0.1:3000/testing", body : JSON.stringify(data), function(result) {
+    //     alert("logged in successfull");
+    //   })
+    //     .fail(function(error) {
+    //       console.log(error);
+    //     });
+        var fetchdata = {
+            "method" : 'POST',
+            'body' : JSON.stringify(data),
+        };
+        var request = new Request("http://127.0.0.1:3000/testing", {
+        method: 'POST',
+        body: data
+        });
+        fetch(request)
+        .then(function(error) {
+            alert("wokrinfnsof");
+            console.log(error);
+        });
+        $.ajax({
+            url : "http://127.0.0.1:3000/testing",
+            type: "POST",
+            data: JSON.stringify({ "email": "hello@user.com", "response": { "name": "Tester" } }),
+            contentType: "application/json; charset=utf-8",
+            dataType   : "json",
+            success    : function(){
+                console.log("Pure jQuery Pure JS object");
+            }
+        });
+        
+    }
+    </script>
+</body>
+</html>
