@@ -1,3 +1,9 @@
+$(function() {
+    $("#sideBarContents").load("sidebarcontents.html");
+    $("#topBar").load("topbar.html");  
+    getAllInvoices();
+});
+
 function getAllInvoices(){
 
   $.ajax({
@@ -16,7 +22,7 @@ function getAllInvoices(){
     error : function(response){
         console.log("error in jquery");
         console.log(response);
-        alert("Record not found!!");
+        console.log("Record not found!!");
     }
     });
 
