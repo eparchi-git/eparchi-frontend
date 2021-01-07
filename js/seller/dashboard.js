@@ -1,4 +1,6 @@
-import { testing } from "./login.js";
+$(function() {
+    getAllData();
+});
 
 function generatebillpage() {
     window.location = './generateInvoice.html';
@@ -6,13 +8,11 @@ function generatebillpage() {
 
 
 function getAllData() {
-
-    testing();
     
     var invoiceData;
 
     $.ajax({
-        url : "http://127.0.0.1:3000/api/v1/invoice/seller/",
+        url : serverurl + "/api/v1/invoice/seller/",
         type: "GET",
         async: false,
         crossDomain: true,
@@ -65,26 +65,4 @@ function totalBillAmount(products) {
         amount += products[index]['quantity']*(products[index]['productMRP']);
     }
     return amount;
-}
-
-function logout() {
-    $.ajax({
-        url : "http://127.0.0.1:3000/api/v1/seller/logout/",
-        type: "GET",
-        async: false,
-        crossDomain: true,
-        xhrFields: {
-          withCredentials: true  
-        },
-        contentType: "application/json; charset=utf-8",
-        dataType   : "json",
-        success    : function(response){
-            window.location.href = "../landingpage.html";
-        },
-        error : function(response){
-            console.log("error in jquery");
-            console.log(response);
-            alert("Record not found!!");
-        }
-    });
 }

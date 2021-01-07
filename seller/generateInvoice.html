@@ -9,7 +9,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Tables</title>
+    
+
+    <!-- #1 From https://bootsnipp.com/snippets/kM0M -->
+<!-- 	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+	<!-- #1 -->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+
+    <title>Add Items</title>
 
     <!-- Custom fonts for this template -->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -63,18 +74,18 @@
                     </form>
 
                     <!-- Topbar Search -->
-                    <!-- <form
+                    <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                            <input type="text" class="form-control bg-light border-0 small" id="buyermobilenumber" placeholder="Enter buyer Mobile number"
                                 aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
+                            <!-- <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">
                                     <i class="fas fa-search fa-sm"></i>
                                 </button>
-                            </div>
+                            </div> -->
                         </div>
-                    </form> -->
+                    </form>
 
                     <!-- Topbar Navbar -->
                     <ul id="topBar" class="navbar-nav ml-auto"></ul>
@@ -85,49 +96,56 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Generate Invoice</h1>
+                    <p class="mb-4">Add Items</p>
+
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <div class="card-header py-3" style="background-color: rgb(21, 91, 174, 0.4);">
-                            <h6 class="m-0 font-weight-bold text-primary" style="text-align: center; ">Past Invoices</h6>
+                        <div class="card-header py-3" style="text-align: center;">
+                            <h6 class="m-0 font-weight-bold text-primary">Items</h6>
                         </div>
-                        <div class="card-body" id="allInvoiceDiv"  > <!-- style="background-color: rgba(21, 57, 127 ,0.5);" -->
-                            <!-- FFE6E6 -->
-                                
+                        <div class="card-body">
+                        	<form id="form" onsubmit="sConsole(event)">
 
 
-								<!-- <div class="card " style="background-color: rgb(21, 91, 174, 0.2);">
-									<a href="invoice.html" class="text-decoration-none"> -->
-									  <!-- <div class="card-header " style="padding: 6px; text-align: center;">
-									  	Order Id : #<label id="invoice-id" style="margin-bottom: 0px;">5512</label>
-									  </div> -->
-									  <!-- <div class="card-body" style="padding: 10px">
-									    <div class="card-text">
-									    	<div class="container" style="width: 100%;">
-											  <div class="row">
-											    <div class="col-sm"style="text-align: center;">
-											      Date : 23/12/2020
-											    </div>
-											    <div class="col-sm"style="text-align: center;">
-											      Aditya Mathur
-											    </div>
-											    <div class="col-sm" style="text-align: center;">
-											      +918085574199
-											    </div>
-											    <div class="col-sm" style="text-align: center;">
-											      Rs. 1,50,000	
-											    </div>
-											  </div>
-											</div>
-										</div>
-									  </div>
-									  </a>
+                        	<!-- try 2 -->
+                        	<div class="panel panel-default">
+
+							<div class="panel-body ">
+							    
+							    <!-- <div class="row">
+							    	
+								 <div class="col-sm-3 nopadding">
+								  <div class="form-group">
+								    <input type="text" class="form-control" id="itemName" name="itemName[]" value="" placeholder="Item Name">
+								  </div>
 								</div>
-								<br> -->
+								<div class="col-sm-3 nopadding">
+								  <div class="form-group">
+								    <input type="text" class="form-control" id="itemPrice" name="itemPrice[]" value="" placeholder="Item Quantity">
+								  </div>
+								</div>
+								<div class="col-sm-3 nopadding">
+								  <div class="form-group">
+								    <input type="text" class="form-control" id="itemQuantity" name="itemQuantity[]" value="" placeholder="Item Price">
+								  </div>
+								</div>
 
+								<br>
+								<div class="clear"></div>
+							  
+							</div> -->
 
-
-
-
+							<div id="education_fields" style="text-align: center;" ></div>
+							<div class="input-group-btn" style="text-align: center;">
+								        <button class="btn btn-success" type="button" id="addmore" onclick="education_fields();"> <span class="glyphicon glyphicon-plus" aria-hidden="true"><i class="fas fa-plus"></i></span> </button>
+								      </div>
+							  </div>
+							</div>
+                            
+							<button class="btn btn-outline-info" type="submit" >Submit</button>
+						</form>
                         </div>
                     </div>
 
@@ -135,6 +153,10 @@
                 <!-- /.container-fluid -->
 
             </div>
+
+<div id="grand" style="text-align: center;">
+Grand Total : ₹ <label type="text" name="gran" id="gran">0</label>
+</div>
 
 
             <!-- End of Main Content -->
@@ -154,6 +176,40 @@
 
     </div>
     <!-- End of Page Wrapper -->
+
+
+<!-- Script to update individual price and total price -->
+<script>
+$(document).ready(function() {
+	$(document).on('keyup', ".itemPrice",function () {
+        var grandTotal = 0;
+        $("input[name='itemQuantity[]']").each(function (index) {
+            var itemQuantity = $("input[name='itemQuantity[]']").eq(index).val();
+            var itemPrice = $("input[name='itemPrice[]']").eq(index).val();
+            var totalItemPrice = parseInt(itemQuantity) * parseInt(itemPrice);
+	            if (!isNaN(totalItemPrice)) {
+				$("lable[name='totalItemPrice[]']").eq(index).text(totalItemPrice);
+				grandTotal = parseInt(grandTotal) + parseInt(totalItemPrice);    
+            	$('#gran').text(grandTotal);
+            }
+        });
+    });
+    $(document).on('keyup', ".itemQuantity",function () {
+        var grandTotal = 0;
+        $("input[name='itemQuantity[]']").each(function (index) {
+            var itemQuantity = $("input[name='itemQuantity[]']").eq(index).val();
+            var itemPrice = $("input[name='itemPrice[]']").eq(index).val();
+            var totalItemPrice = parseInt(itemQuantity) * parseInt(itemPrice);
+            
+            if (!isNaN(totalItemPrice)) {
+				$("lable[name='totalItemPrice[]']").eq(index).text(totalItemPrice);
+				grandTotal = parseInt(grandTotal) + parseInt(totalItemPrice);    
+            	$('#gran').text(grandTotal);
+            }
+        });
+    });
+});
+</script>
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
@@ -197,8 +253,8 @@
     <!-- Page level custom scripts -->
     <script src="../js/demo/datatables-demo.js"></script>
 
-    <!-- All functions Js-->
-    <script src="../js/seller/allInvoice.js"></script>
+    <!-- All function Js-->
+    <script src="../js/seller/generateInvoice.js"></script>
     <script src="../js/seller/common.js"></script>
 
 </body>

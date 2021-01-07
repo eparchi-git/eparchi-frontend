@@ -1,9 +1,4 @@
-export function testing() {
-    console.log('module import working');
-}
-
-
-function loginSeller() {
+function login() {
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
 
@@ -13,7 +8,7 @@ function loginSeller() {
     }
 
         $.ajax({
-          url : "http://127.0.0.1:3000/api/v1/seller/login",
+          url : serverurl + "/api/v1/seller/login",
           type: "POST",
           async: false,
           crossDomain: true,
@@ -26,7 +21,7 @@ function loginSeller() {
           success    : function(response){
               console.log("Pure jQuery Pure JS object");
               
-              window.location.replace("/dashboardseller.html");
+              window.location.replace("/seller/dashboard.html");
           },
           error : function(response){
               console.log("error in jquery");

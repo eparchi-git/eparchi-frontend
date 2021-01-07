@@ -1,13 +1,16 @@
+const serverurl = 'http://127.0.0.1:3000';
+
 $(function() {
-    $("#sideBarContents").load("sidebarcontents.html");
-    $("#topBar").load("topbar.html");  
+    $("#sideBarContents").load("sideBarContents.html");
+    $("#topBar").load("topBar.html");  
+    console.log(serverurl);
     getAllInvoices();
 });
 
 function getAllInvoices(){
 
   $.ajax({
-    url : "http://127.0.0.1:3000/api/v1/invoice/buyer/",
+    url : serverurl + "/api/v1/invoice/buyer/",
     type: "GET",
     async: false,
     crossDomain: true,
@@ -81,27 +84,6 @@ function writeAllInvoiceData(data) {
 
 function openInvoice(id) {
     console.log(id);
-}
-
-
-function logout() {
-    $.ajax({
-        url : "http://127.0.0.1:3000/api/v1/users/logout/",
-        type: "GET",
-        async: false,
-        crossDomain: true,
-        xhrFields: {
-          withCredentials: true  
-        },
-        contentType: "application/json; charset=utf-8",
-        dataType   : "json",
-        success    : function(response){
-            window.location.href = "./landingpage.html";
-        },
-        error : function(response){
-            console.log("error in jquery");
-            console.log(response);
-            alert("Record not found!!");
-        }
-    });
+    var par = '?' + 'bill=' + id;
+    window.location = './invoice.html' + par;
 }

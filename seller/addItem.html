@@ -9,23 +9,36 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Tables</title>
+    <!-- #1 From https://bootsnipp.com/snippets/kM0M -->
+<!-- 	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+	<!-- #1 -->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+
+    <title>Add Items</title>
 
     <!-- Custom fonts for this template -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
 <body id="page-top">
+
+
+
+    
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -363,230 +376,72 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Generate Invoice</h1>
+                    <p class="mb-4">Add Items</p>
+
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <div class="card-header py-3" style="background-color: rgb(21, 91, 174, 0.4);">
-                            <h6 class="m-0 font-weight-bold text-primary" style="text-align: center; ">Past Invoices</h6>
+                        <div class="card-header py-3" style="text-align: center;">
+                            <h6 class="m-0 font-weight-bold text-primary">Items</h6>
                         </div>
-                        <div class="card-body"   > <!-- style="background-color: rgba(21, 57, 127 ,0.5);" -->
-                            <!-- FFE6E6 -->
-                                
-								<div class="card " style="background-color: rgb(21, 91, 174, 0.2);">
-									<a href="invoice.html" class="text-decoration-none">
-									  <!-- <div class="card-header " style="padding: 6px; text-align: center;">
-									  	Order Id : #<label id="invoice-id" style="margin-bottom: 0px;">5512</label>
-									  </div> -->
-									  <div class="card-body" style="padding: 10px">
-									    <div class="card-text">
-									    	<div class="container" style="width: 100%;">
-											  <div class="row">
-											    <div class="col-sm"style="text-align: center;">
-											      Date : 23/12/2020
-											    </div>
-											    <div class="col-sm"style="text-align: center;">
-											      Aditya Mathur
-											    </div>
-											    <div class="col-sm" style="text-align: center;">
-											      +918085574199
-											    </div>
-											    <div class="col-sm" style="text-align: center;">
-											      Rs. 1,50,000	
-											    </div>
-											  </div>
-											</div>
-										</div>
-									  </div>
-									  </a>
+                        <div class="card-body">
+                        	<form id="form" onsubmit="sConsole(event)">
+
+
+                        	<!-- try 2 -->
+                        	<div class="panel panel-default">
+
+							<div class="panel-body ">
+							    
+							    <!-- <div class="row">
+							    	
+								 <div class="col-sm-3 nopadding">
+								  <div class="form-group">
+								    <input type="text" class="form-control" id="itemName" name="itemName[]" value="" placeholder="Item Name">
+								  </div>
 								</div>
-								<br>
-
-								<div class="card " style="background-color: rgb(21, 91, 174, 0.2);;">
-									<a href="invoice.html" class="text-decoration-none">
-									  <!-- <div class="card-header " style="padding: 6px; text-align: center;">
-									  	Order Id : #<label id="invoice-id" style="margin-bottom: 0px;">5512</label>
-									  </div> -->
-									  <div class="card-body" style="padding: 10px">
-									    <div class="card-text">
-									    	<div class="container" style="width: 100%;">
-											  <div class="row">
-											    <div class="col-sm"style="text-align: center;">
-											      Date : 23/12/2020
-											    </div>
-											    <div class="col-sm"style="text-align: center;">
-											      Aditya Mathur
-											    </div>
-											    <div class="col-sm" style="text-align: center;">
-											      +918085574199
-											    </div>
-											    <div class="col-sm" style="text-align: center;">
-											      Rs. 1,50,000	
-											    </div>
-											  </div>
-											</div>
-										</div>
-									  </div>
-									  </a>
+								<div class="col-sm-3 nopadding">
+								  <div class="form-group">
+								    <input type="text" class="form-control" id="itemPrice" name="itemPrice[]" value="" placeholder="Item Quantity">
+								  </div>
 								</div>
-								<br>
-
-
-								<div class="card " style="background-color: rgb(21, 91, 174, 0.2);;">
-									<a href="invoice.html" class="text-decoration-none">
-									  <!-- <div class="card-header " style="padding: 6px; text-align: center;">
-									  	Order Id : #<label id="invoice-id" style="margin-bottom: 0px;">5512</label>
-									  </div> -->
-									  <div class="card-body" style="padding: 10px">
-									    <div class="card-text">
-									    	<div class="container" style="width: 100%;">
-											  <div class="row">
-											    <div class="col-sm"style="text-align: center;">
-											      Date : 23/12/2020
-											    </div>
-											    <div class="col-sm"style="text-align: center;">
-											      Aditya Mathur
-											    </div>
-											    <div class="col-sm" style="text-align: center;">
-											      +918085574199
-											    </div>
-											    <div class="col-sm" style="text-align: center;">
-											      Rs. 1,50,000	
-											    </div>
-											  </div>
-											</div>
-										</div>
-									  </div>
-									  </a>
+								<div class="col-sm-3 nopadding">
+								  <div class="form-group">
+								    <input type="text" class="form-control" id="itemQuantity" name="itemQuantity[]" value="" placeholder="Item Price">
+								  </div>
 								</div>
+
 								<br>
+								<div class="clear"></div>
+							  
+							</div> -->
 
-								<div class="card " style="background-color: rgb(21, 91, 174, 0.2);">
-									<a href="invoice.html" class="text-decoration-none">
-									  <!-- <div class="card-header " style="padding: 6px; text-align: center;">
-									  	Order Id : #<label id="invoice-id" style="margin-bottom: 0px;">5512</label>
-									  </div> -->
-									  <div class="card-body" style="padding: 10px">
-									    <div class="card-text">
-									    	<div class="container" style="width: 100%;">
-											  <div class="row">
-											    <div class="col-sm"style="text-align: center;">
-											      Date : 23/12/2020
-											    </div>
-											    <div class="col-sm"style="text-align: center;">
-											      Aditya Mathur
-											    </div>
-											    <div class="col-sm" style="text-align: center;">
-											      +918085574199
-											    </div>
-											    <div class="col-sm" style="text-align: center;">
-											      Rs. 1,50,000	
-											    </div>
-											  </div>
-											</div>
-										</div>
-									  </div>
-									  </a>
-								</div>
-								<br>
+							<div id="item_fields" style="text-align: center;" ></div>
+							<div class="input-group-btn" style="text-align: center;">
+								        <button class="btn btn-outline-success" type="button" id="addmore" onclick="item_fields();"> <span class="glyphicon glyphicon-plus" aria-hidden="true"><i class="fas fa-plus"></i> ADD</span> </button>
+								      </div>
+							  </div>
+							</div>
 
-
-								<div class="card " style="background-color: rgb(21, 91, 174, 0.2);">
-									<a href="invoice.html" class="text-decoration-none">
-									  <!-- <div class="card-header " style="padding: 6px; text-align: center;">
-									  	Order Id : #<label id="invoice-id" style="margin-bottom: 0px;">5512</label>
-									  </div> -->
-									  <div class="card-body" style="padding: 10px">
-									    <div class="card-text">
-									    	<div class="container" style="width: 100%;">
-											  <div class="row">
-											    <div class="col-sm"style="text-align: center;">
-											      Date : 23/12/2020
-											    </div>
-											    <div class="col-sm"style="text-align: center;">
-											      Aditya Mathur
-											    </div>
-											    <div class="col-sm" style="text-align: center;">
-											      +918085574199
-											    </div>
-											    <div class="col-sm" style="text-align: center;">
-											      Rs. 1,50,000	
-											    </div>
-											  </div>
-											</div>
-										</div>
-									  </div>
-									  </a>
-								</div>
-								<br>
-
-
-								<div class="card " style="background-color: rgb(21, 91, 174, 0.2);">
-									<a href="invoice.html" class="text-decoration-none">
-									  <!-- <div class="card-header " style="padding: 6px; text-align: center;">
-									  	Order Id : #<label id="invoice-id" style="margin-bottom: 0px;">5512</label>
-									  </div> -->
-									  <div class="card-body" style="padding: 10px">
-									    <div class="card-text">
-									    	<div class="container" style="width: 100%;">
-											  <div class="row">
-											    <div class="col-sm"style="text-align: center;">
-											      Date : 23/12/2020
-											    </div>
-											    <div class="col-sm"style="text-align: center;">
-											      Aditya Mathur
-											    </div>
-											    <div class="col-sm" style="text-align: center;">
-											      +918085574199
-											    </div>
-											    <div class="col-sm" style="text-align: center;">
-											      Rs. 1,50,000	
-											    </div>
-											  </div>
-											</div>
-										</div>
-									  </div>
-									  </a>
-								</div>
-								<br>
-
-
-								<div class="card " style="background-color: rgb(21, 91, 174, 0.2);">
-									<a href="invoice.html" class="text-decoration-none">
-									  <!-- <div class="card-header " style="padding: 6px; text-align: center;">
-									  	Order Id : #<label id="invoice-id" style="margin-bottom: 0px;">5512</label>
-									  </div> -->
-									  <div class="card-body" style="padding: 10px">
-									    <div class="card-text">
-									    	<div class="container" style="width: 100%;">
-											  <div class="row">
-											    <div class="col-sm"style="text-align: center;">
-											      Date : 23/12/2020
-											    </div>
-											    <div class="col-sm"style="text-align: center;">
-											      Aditya Mathur
-											    </div>
-											    <div class="col-sm" style="text-align: center;">
-											      +918085574199
-											    </div>
-											    <div class="col-sm" style="text-align: center;">
-											      Rs. 1,50,000	
-											    </div>
-											  </div>
-											</div>
-										</div>
-									  </div>
-									  </a>
-								</div>
-								<br>
-
-
-
+							
                         </div>
                     </div>
-
+                    <div style="text-align: center;">
+                    	<input type="number" class="form-control" name="mobileno" id="mobileno" placeholder="Customer Mobile Number"  style=" display:inline-flex; width: 300px; margin: 10px; text-align: center; border: 1px solid" /><br>
+                            <button class="btn btn-secondary" type="submit" style="width: 200px;">Generate Invoice	</button><br>
+                        </div>
+                        </form>
                 </div>
+
                 <!-- /.container-fluid -->
 
             </div>
+
+<br>
+<div id="grand" style="text-align: center;">
+Grand Total : ₹ <label type="text" name="gran" id="gran">0</label>
+</div>
 
 
             <!-- End of Main Content -->
@@ -607,6 +462,122 @@
     </div>
     <!-- End of Page Wrapper -->
 
+
+<script type="text/javascript">
+	function sConsole(event) {
+		console.log("submit click");
+  event.preventDefault();
+  var k = "";
+  var inputName = document.getElementsByName("itemName[]");
+  var inputprice = document.getElementsByName("itemPrice[]");
+  var inputQuantity = document.getElementsByName("itemQuantity[]");
+	for (var i = 0; i < inputName.length; i++) { 
+	                var name = inputName[i]; 
+	                var price = inputprice[i];
+	                var quantity = inputQuantity[i];
+	                k = k + "name : " + name.value + " price : " + price.value + " quantity : "+ quantity.value + "\n"; 
+  } 
+  console.log(k);
+
+  
+}
+</script>
+
+
+
+<!-- Script to update individual price and total price -->
+<script>
+$(document).ready(function() {
+	$(document).on('keyup', ".itemPrice",function () {
+        var grandTotal = 0;
+        $("input[name='itemQuantity[]']").each(function (index) {
+            var itemQuantity = $("input[name='itemQuantity[]']").eq(index).val();
+            var itemPrice = $("input[name='itemPrice[]']").eq(index).val();
+            var totalItemPrice = parseInt(itemQuantity) * parseInt(itemPrice);
+	            if (!isNaN(totalItemPrice)) {
+				$("lable[name='totalItemPrice[]']").eq(index).text(totalItemPrice);
+				grandTotal = parseInt(grandTotal) + parseInt(totalItemPrice);    
+            	$('#gran').text(grandTotal);
+            }
+        });
+    });
+    $(document).on('keyup', ".itemQuantity",function () {
+        var grandTotal = 0;
+        $("input[name='itemQuantity[]']").each(function (index) {
+            var itemQuantity = $("input[name='itemQuantity[]']").eq(index).val();
+            var itemPrice = $("input[name='itemPrice[]']").eq(index).val();
+            var totalItemPrice = parseInt(itemQuantity) * parseInt(itemPrice);
+            
+            if (!isNaN(totalItemPrice)) {
+				$("lable[name='totalItemPrice[]']").eq(index).text(totalItemPrice);
+				grandTotal = parseInt(grandTotal) + parseInt(totalItemPrice);    
+            	$('#gran').text(grandTotal);
+            }
+        });
+    });
+});
+</script>
+
+
+
+
+<script type="text/javascript">
+window.onload = function(){
+  document.getElementById('addmore').click();
+}
+</script>
+<script type="text/javascript">
+var room = 1;
+function item_fields() {
+ 
+    room++;
+    var objTo = document.getElementById('item_fields')
+    var divtest = document.createElement("div");
+	divtest.setAttribute("class", "form-group removeclass"+room);
+	var rdiv = 'removeclass'+room;
+    divtest.innerHTML = `
+    <div class="row item">
+        <div class="col-sm-3 nopadding">
+            <div class="form-group">
+                <input type="text" class="form-control itemName" id="itemName" name="itemName[]" value="" placeholder="Item Name" style="text-align: center;" required> </div>
+        </div>
+        <div class="col-sm-3 nopadding">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">₹</span>
+              </div>
+              <input type="number" class="itemPrice form-control" id="itemPrice" name="itemPrice[]" value="" min="0" placeholder="Item Price" style="text-align: center;" required >
+            </div>
+        </div>
+        <div class="col-sm-3 nopadding">
+            <div class="form-group">
+                <input type="number" class="itemQuantity form-control" id="itemQuantity" name="itemQuantity[]" min="0" value="" placeholder="Item Quantity" style="text-align: center;" required> </div>
+        </div>
+        <div class="col-sm-3 ">
+            <div class="row">
+                <div class=" col-sm-6  input-group-btn" style="text-align: center;" name="totalItemPrice[]" style="padding:20px;">Total Price : ₹
+                    <lable class="totalItemPrice" name="totalItemPrice[]" style="display: inline-block; vertical-align: middle; margin: 9px 0;">0</lable>
+                </div>
+                <div class=" col-sm-6  input-group-btn" style="text-align: center;">
+                    ` + '<button class="btn btn-sm btn-outline-danger" type="button" onclick="remove_item_fields('+ room +');"> <span class="glyphicon glyphicon-minus" aria-hidden="true"><i class="fas fa-trash"></i></span> </button>' + `
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div style="width:100%; ">
+            <hr>
+        </div>
+    </div>`;
+    
+    objTo.appendChild(divtest)
+}
+   function remove_item_fields(rid) {
+	   $('.removeclass'+rid).remove();
+   }
+</script>
+
+
+
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
@@ -626,28 +597,32 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" onclick="logout()">Logout</a>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="../js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="../vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
+    <script src="../js/demo/datatables-demo.js"></script>
+
+    <!-- All fuctions JS -->
+    <!-- <script src="../js/seller/generateInvoice.js"></script>
+    <script src="../js/seller/common.js"></script> -->
 
 </body>
 

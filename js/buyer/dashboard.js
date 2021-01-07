@@ -1,6 +1,8 @@
+const serverurl = 'http://127.0.0.1:3000';
+
 $(function() {
-    $("#sideBarContents").load("sidebarcontents.html"); 
-    $("#topBar").load("topbar.html"); 
+    $("#sideBarContents").load("sideBarContents.html"); 
+    $("#topBar").load("topBar.html"); 
     getAllData();
 });
 
@@ -9,7 +11,7 @@ function getAllData() {
     var invoiceData;
 
     $.ajax({
-        url : "http://127.0.0.1:3000/api/v1/invoice/buyer/",
+        url : serverurl + "/api/v1/invoice/buyer/",
         type: "GET",
         async: false,
         crossDomain: true,
@@ -52,24 +54,6 @@ function getAllData() {
     document.getElementById("expensethismonth").innerHTML = expensethismonth;
     document.getElementById("expenseinlast5days").innerHTML = expenselast5days;
 
-
-
-    // document.getElementById("expensethismonth").innerHTML = 1000;
-    // var d = new Date();
-    // console.log(d);
-    // var d1 = new Date(Date.parse('2020-12-24T15:03:33.808Z'));
-    // var d2 = new Date(Date.parse('2020-12-24T15:03:33.808Z'));
-    // d2.setDate(d1.getDate()-30);
-    // if(d1.getTime() > d2.getTime()) {
-    //     console.log("working");
-    // }
-    // console.log(d1);
-    // console.log(d2);
-    
-
-    
-    // console.log(invoiceData);
-    // console.log(totalBillAmount(invoiceData['data']['data'][0]['products']));
 }
 
 function totalBillAmount(products) {
@@ -78,26 +62,4 @@ function totalBillAmount(products) {
         amount += products[index]['quantity']*(products[index]['productMRP']);
     }
     return amount;
-}
-
-function logout() {
-    $.ajax({
-        url : "http://127.0.0.1:3000/api/v1/users/logout/",
-        type: "GET",
-        async: false,
-        crossDomain: true,
-        xhrFields: {
-          withCredentials: true  
-        },
-        contentType: "application/json; charset=utf-8",
-        dataType   : "json",
-        success    : function(response){
-            window.location.href = "./landingpage.html";
-        },
-        error : function(response){
-            console.log("error in jquery");
-            console.log(response);
-            alert("Record not found!!");
-        }
-    });
 }

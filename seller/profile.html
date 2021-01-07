@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Tables</title>
+
+    <!-- Custom fonts for this template -->
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../css/profileOnline.css" rel="stylesheet">
+    <!-- Custom styles for this page -->
+    <link href="../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+
+            <!-- SideBar Contents displaying-->
+            <div id="sideBarContents"></div>
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <form class="form-inline">
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </form>
+
+                    <!-- Topbar Search -->
+                    <!-- <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form> -->
+
+                    <!-- Topbar Navbar -->
+                    <ul id="topBar" class="navbar-nav ml-auto"></ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+
+
+<!--                         PROFILE SECTION STARTS -->
+                                  <div class="main-content">
+                                    <!-- Top navbar -->
+                                    
+                                    <!-- Header -->
+                                   <br><br><br><br><br><br>
+                                        <!-- Page content -->
+                                        <div class="container-fluid mt--7">
+                                          <div class="row">
+                                            <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+                                              <div class="card card-profile shadow">
+                                                <div class="row justify-content-center">
+                                                  <div class="col-lg-3 order-lg-2">
+                                                    <div class="card-profile-image">
+                                                        <img src="https://www.seekpng.com/png/full/803-8032634_starbucks-logo-parody.png" class="rounded-circle">   
+                                                      
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+
+                                                </div>
+                                                <div class="card-body pt-0 pt-md-4">
+                                                  <div class="row">
+                                                    <div class="col">
+                                                      <div class="card-profile-stats d-flex justify-content-center mt-md-5"></div>
+                                                    </div>
+                                                  </div>
+
+                                                          <div class="text-center">
+                                                            <h3>
+                                                            	<label id="brand-name">XXXXXXXXXXXXXX</label>
+                                                            </h3>
+                                                            <div class="h5 font-weight-300">
+                                                              GSTIN : # <label id="gstin" >XXXXXXXXX</label>
+                                                            </div>
+                                                            <div class="h5 mt-4">
+                                                              <i class="ni business_briefcase-24 mr-2"></i>Apparently a Food Company
+                                                            </div>
+                                                            <div>
+                                                              <i class="ni education_hat mr-2"></i>#Food #Money #PaisaDe
+                                                            </div>
+                                                            
+                                                          </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        <div class="col-xl-8 order-xl-1">
+                                          <div class="card bg-secondary shadow">
+                                            <div class="card-header bg-white border-0">
+                                              <div class="row align-items-center">
+                                                <div class="col-8">
+                                                  <h3 class="mb-0">My Profile</h3>
+                                                </div>
+                                                <div class="col-4 text-right">
+                                                  <a href="#!" class="btn btn-sm btn-primary">EDIT</a>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="card-body">
+                                              <form>
+                                                <h6 class="heading-small text-muted mb-4">User information</h6>
+                                                <div class="pl-lg-4">
+                                                  <div class="row">
+                                                    <div class="col-lg-6">
+                                                      <div class="form-group focused">
+                                                        <label class="form-control-label" for="input-username">Mobile Number</label>
+                                                        <input type="number" id="input-username" class="form-control form-control-alternative"   readonly="readonly">
+                                                        <!-- <label class="form-control" id="input-username"></label> -->
+                                                      </div>
+                                                    </div>
+                                                    
+
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group focused">
+                                                          <label class="form-control-label" for="input-first-name">Name</label>
+                                                          <input type="text" id="input-name" class="form-control form-control-alternative"  readonly="readonly">
+                                                        </div>
+                                                      </div>
+                                                  </div>
+                                                  <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group">
+                                                          <label class="form-control-label" for="input-email">Email address</label>
+                                                          <input type="email" id="input-email" class="form-control form-control-alternative" readonly="readonly">
+                                                        </div>
+                                                      </div>
+                                                    <!-- <div class="col-lg-6">
+                                                      <div class="form-group focused">
+                                                        <label class="form-control-label" for="input-last-name">Last name</label>
+                                                        <input type="text" id="input-last-name" class="form-control form-control-alternative" readonly="readonly">
+                                                      </div>
+                                                    </div> -->
+                                                  </div>
+                                                </div>
+                                                <hr class="my-4">
+                                                <!-- Address -->
+                                                <h6 class="heading-small text-muted mb-4">Contact information</h6>
+                                                <div class="pl-lg-4">
+                                                  <div class="row">
+                                                    <div class="col-md-12">
+                                                      <div class="form-group focused">
+                                                        <label class="form-control-label" for="input-address">Address</label>
+                                                        <input id="input-address" class="form-control form-control-alternative" type="text" readonly="readonly">
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="row">
+                                                    <div class="col-lg-3">
+                                                      <div class="form-group focused">
+                                                        <label class="form-control-label" for="input-city">City</label>
+                                                        <input type="text" id="input-city" class="form-control form-control-alternative" readonly="readonly">
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <div class="form-group">
+                                                          <label class="form-control-label" for="input-country">State</label>
+                                                          <input type="text" id="input-state" class="form-control form-control-alternative" readonly="readonly">
+                                                        </div>
+                                                      </div>
+                                                    <div class="col-lg-3">
+                                                      <div class="form-group focused">
+                                                        <label class="form-control-label" for="input-country">Country</label>
+                                                        <input type="text" id="input-country" class="form-control form-control-alternative" readonly="readonly">
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                      <div class="form-group">
+                                                        <label class="form-control-label" for="input-country">Postal code</label>
+                                                        <input type="number" id="input-postal-code" class="form-control form-control-alternative" readonly="readonly">
+                                                      </div>
+                                                    </div>
+                                                    
+                                                  </div>
+                                                </div>
+                                                
+                                              </form>
+
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <br>
+<!--                         PROFILE SECTION ENDS-->
+
+
+
+            </div>
+
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2020</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="../js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="../vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="../js/demo/datatables-demo.js"></script>
+
+    <!-- All functions JS-->
+    <script src="../js/seller/common.js"></script>
+    <script src="../js/seller/profile.js"></script>
+
+</body>
+
+</html>

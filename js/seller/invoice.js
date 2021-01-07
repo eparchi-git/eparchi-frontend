@@ -1,8 +1,5 @@
-const serverurl = 'http://127.0.0.1:3000';
-
 $(function() {
-    $("#sideBarContents").load("sideBarContents.html"); 
-    $("#topBar").load("topBar.html"); 
+
     var invoiceData = getAllInvoices();
     var billIndex = parseInt(getBillIndex());
     var bill = invoiceData['data']['data'][billIndex];
@@ -14,7 +11,7 @@ function getAllInvoices(){
     var invoiceData;
 
     $.ajax({
-      url : serverurl + "/api/v1/invoice/buyer/",
+      url : serverurl + "/api/v1/invoice/seller/",
       type: "GET",
       async: false,
       crossDomain: true,

@@ -1,11 +1,13 @@
-function registerBuyer(){
+const serverurl = 'http://127.0.0.1:3000';
+
+function register(){
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
     var mobileno = document.getElementById('mobileno').value;
     var password = document.getElementById('password').value;
     var passwordConfirm = document.getElementById('passwordConfirm').value;   
     $.ajax({
-        url : "http://127.0.0.1:3000/api/v1/users/signup/",
+        url : serverurl + "/api/v1/users/signup/",
         type: "POST",
         data:{
              name: name,
